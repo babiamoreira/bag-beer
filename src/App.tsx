@@ -95,7 +95,7 @@ export default function App() {
     >
       <header className="flex justify-between items-center px-6 py-4 shrink-0">
         <div className="flex items-center gap-2">
-          <img src="/icon.svg" alt="" className="w-8 h-8 rounded-lg" />
+          <img src={`${import.meta.env.BASE_URL}icon.svg`} alt="" className="w-8 h-8 rounded-lg" />
           <span className="text-amber-400 font-bold text-base tracking-widest uppercase">bag-beer</span>
         </div>
         <span className="text-white/40 text-sm tabular-nums">{remaining} cartas</span>
