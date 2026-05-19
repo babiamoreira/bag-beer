@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#root {
+  height: 100dvh;
+}
+
+@keyframes flipIn {
+  from {
+    transform: perspective(800px) rotateY(-90deg) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(800px) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastSlide {
+  0%   { opacity: 0; transform: translate(-50%, 10px); }
+  15%  { opacity: 1; transform: translate(-50%, 0); }
+  75%  { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -6px); }
+}
+
+.card-flip {
+  animation: flipIn 0.35s ease-out;
+}
+
+.meaning-fade {
+  animation: fadeUp 0.3s ease-out 0.15s both;
+}
+
+.toast {
+  animation: toastSlide 2s ease-in-out forwards;
+}
